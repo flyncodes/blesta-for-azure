@@ -7,7 +7,7 @@ RUN cd /tmp && curl -o sourceguardian.tar.gz https://www.sourceguardian.com/load
     tar -xzvf sourceguardian.tar.gz && \
     rm sourceguardian.tar.gz
 RUN mkdir -p /usr/lib/php/sourceguardian && \
-    cp /tmp/sourceguardian/ixed.$PHP_VERSION.lin /usr/lib/php/sourceguardian/.
+    cp /tmp/ixed.$PHP_VERSION.lin /usr/lib/php/sourceguardian/.
 RUN mkdir -p /etc/php/$PHP_VERSION/fpm/conf.d/ && \
     echo "extension = /usr/lib/php/sourceguardian/ixed.${PHP_VERSION}.lin" \
     > /etc/php/$PHP_VERSION/fpm/conf.d/00-sourceguardian.ini
