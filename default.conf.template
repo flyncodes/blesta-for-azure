@@ -23,10 +23,6 @@ server {
         root   /usr/share/nginx/html;
     }
 
-    location ~ /?(.*)$ {
-        rewrite ^/(.*)$ /index.php/$1;
-    }
-
     location / {
         try_files $uri $uri/ =404;
     }
