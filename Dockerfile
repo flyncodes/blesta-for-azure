@@ -1,6 +1,6 @@
-FROM ghcr.io/flyncodes/nginx-php-for-azure:php8.1
+FROM ghcr.io/flyncodes/nginx-php-for-azure:php8.0
 
-ENV PHP_VERSION=8.1
+ENV PHP_VERSION=8.0
 
 # Install SourceGuardian loader
 RUN cd /tmp && curl -o sourceguardian.tar.gz https://www.sourceguardian.com/loaders/download/loaders.linux-x86_64.tar.gz && \
