@@ -15,3 +15,6 @@ RUN mkdir -p /etc/php/$PHP_VERSION/cli/conf.d/ && \
     cp /etc/php/$PHP_VERSION/fpm/conf.d/00-sourceguardian.ini /etc/php/$PHP_VERSION/cli/conf.d/00-sourceguardian.ini
 
 COPY default.conf.template /etc/nginx/templates/
+
+# Map Azure App Service directory to inside the container
+RUN ln -s /home/site/wwwroot/inside /var/www/html
