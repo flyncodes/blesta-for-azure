@@ -16,4 +16,7 @@ RUN mkdir -p /etc/php/$PHP_VERSION/fpm/conf.d/ && \
 RUN mkdir -p /etc/php/$PHP_VERSION/cli/conf.d/ && \
     cp /etc/php/$PHP_VERSION/fpm/conf.d/00-ioncube.ini /etc/php/$PHP_VERSION/cli/conf.d/00-ioncube.ini
 
+# Make a directory on the local disk to copy the code from Azure shared storage to this
+RUN mkdir -p /usr/local/cachedapp/wwwroot
+
 COPY default.conf.template /etc/nginx/templates/
