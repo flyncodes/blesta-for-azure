@@ -7,7 +7,7 @@ RUN cd /tmp && curl -o ioncube.tar.gz https://downloads.ioncube.com/loader_downl
     mkdir -p ioncube && tar -xzvf ioncube.tar.gz -C ioncube && \
     rm ioncube.tar.gz
 RUN mkdir -p /usr/lib/php/ioncube && \
-    cp ioncube/ioncube_loader_lin_$PHP_VERSION.so /usr/lib/php/ioncube/ioncube_loader_lin_$PHP_VERSION.so && \
+    cp /tmp/ioncube/ioncube_loader_lin_$PHP_VERSION.so /usr/lib/php/ioncube/ioncube_loader_lin_$PHP_VERSION.so && \
     rm -r /tmp/ioncube
 # Add ioncube loader to PHP config
 RUN mkdir -p /etc/php/$PHP_VERSION/fpm/conf.d/ && \
