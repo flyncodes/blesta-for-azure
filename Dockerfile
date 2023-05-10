@@ -19,4 +19,7 @@ RUN mkdir -p /etc/php/$PHP_VERSION/cli/conf.d/ && \
 # Make a directory on the local disk to copy the code from Azure shared storage to this
 RUN mkdir -p /usr/local/cachedapp/wwwroot
 
+# Copy scripts to be ran on docker startup
 COPY default.conf.template /etc/nginx/templates/
+COPY docker-entrypoint.d/ /docker-entrypoint.d/
+RUN chmod -v +x /docker-entrypoint.d/*.sh
