@@ -2,7 +2,7 @@ FROM ghcr.io/flyncodes/nginx-php-for-azure:php8.1
 
 ENV PHP_VERSION=8.1
 ARG NGINX_ROOT
-ENV NGINX_ROOT=${NGINX_ROOT:/usr/local/cachedapp/wwwroot}
+ENV NGINX_ROOT=${NGINX_ROOT:-/usr/local/cachedapp/wwwroot}
 
 # Download & install ioncube loader
 RUN cd /tmp && curl -o ioncube.tar.gz https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz && \
