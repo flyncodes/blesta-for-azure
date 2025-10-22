@@ -1,6 +1,6 @@
-FROM ghcr.io/flyncodes/nginx-php-for-azure:php8.2
+FROM ghcr.io/flyncodes/nginx-php-for-azure:php8.3
 
-ENV PHP_VERSION=8.2
+ENV PHP_VERSION=8.3
 ARG NGINX_ROOT
 ENV NGINX_ROOT=${NGINX_ROOT:-/usr/local/cachedapp/wwwroot}
 
