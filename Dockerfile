@@ -25,6 +25,3 @@ RUN mkdir -p $NGINX_ROOT
 COPY default.conf.template /etc/nginx/templates/
 COPY docker-entrypoint.d/ /docker-entrypoint.d/
 RUN chmod -v +x /docker-entrypoint.d/*.sh
-
-USER nginx
-CMD ["nginx","-g","daemon off"]
